@@ -13,7 +13,7 @@ type SysLog struct {
 	Id         uint       `json:"id" form:"id" gorm:"column:id;comment:id;"`
 	Title      string     `json:"title" form:"title" gorm:"column:title;comment:日志标题;type:varchar(255);size:255;"`
 	CreateBy   string     `json:"createBy" form:"createBy" gorm:"column:create_by;comment:日志标题;type:varchar(255);size:255;"`
-	CreateTime *time.Time `json:"createTime" form:"createTime" gorm:"column:create_time;comment:创建时间;default:null;"`
+	CreateTime *time.Time `json:"createTime" form:"createTime" gorm:"column:create_time;comment:创建时间;default:CURRENT_TIMESTAMP;"`
 	RemoteAddr string     `json:"remoteAddr" form:"remoteAddr" gorm:"column:remote_addr;comment:操作ip地址;type:varchar(30);size:30;"`
 	UserAgent  string     `json:"userAgent" form:"userAgent" gorm:"column:user_agent;comment:用户代理;type:varchar(255);size:255;"`
 	RequestUri string     `json:"requestUri" form:"requestUri" gorm:"column:request_uri;comment:请求uri;type:varchar(60);size:60;"`

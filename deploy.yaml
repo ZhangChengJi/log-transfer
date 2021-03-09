@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-transfer
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: log-transfer
+  template:
+    metadata:
+      labels:
+        app: log-transfer
+        version: v1
+    spec:
+      containers:
+        - name: log-transfer
+          image: registry.cn-qingdao.aliyuncs.com/nqkj-release/log-transfer:1.0.0-release
+          ports:
+            - containerPort: 9000
+              name: web
+              protocol: TCP
+              
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-transfer
+  namespace: default
+  labels:
+    app: log-transfer
+spec:
+  selector:
+    app: log-transfer
+  type: NodePort
+  ports:
+    - name: http
+      port: 9000
+      targetPort: 9000
+      nodePort: 30450
+
