@@ -1,5 +1,4 @@
 
-
 ### STS ###
 .apt_generated
 .classpath
@@ -21,3 +20,4 @@
 ### logs ###
 logs
 /logs/*
+latest_log
