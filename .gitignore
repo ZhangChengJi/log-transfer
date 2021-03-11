@@ -1,4 +1,3 @@
-
 ### STS ###
 .apt_generated
 .classpath
@@ -13,6 +12,8 @@
 *.iws
 *.iml
 *.ipr
+
+go.sum
 
 ### VS Code ###
 .vscode/
